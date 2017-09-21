@@ -9,6 +9,10 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 
 public class Robot {
+    public static final int LEFT = 0;
+    public static final int RIGHT = 1;
+    public static final int FORWARD = 2;
+    public static final int BACK = 3;
     private DcMotor frontRightMotor;
     private DcMotor frontLeftMotor;
     private DcMotor backRightMotor;
@@ -25,10 +29,11 @@ public class Robot {
     }
 
     public void moveForward(float power){
-        frontLeftMotor.setPower();
+        //frontLeftMotor.setPower();
     }
 
-    public void setDirection(Direction direction){
+
+    public void setDirection(int direction){
 
     }
 }
