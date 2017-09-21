@@ -9,5 +9,26 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 
 public class Robot {
-    private DcMotor motor;
+    private DcMotor frontRightMotor;
+    private DcMotor frontLeftMotor;
+    private DcMotor backRightMotor;
+    private DcMotor backLeftMotor;
+
+    public Robot(){
+        //frontLeftMotor = hardwareMap.get();
+        //frontRoghtMotor = hardwareMap.get();
+        //backRightMotor = hardwareMap.get();
+        //backLeftMotor = hardwareMap.get();
+
+
+
+    }
+
+    public void moveForward(float power){
+        frontLeftMotor.setPower();
+    }
+
+    public void setDirection(Direction direction){
+
+    }
 }
