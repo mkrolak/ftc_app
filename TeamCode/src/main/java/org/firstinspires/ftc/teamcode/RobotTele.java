@@ -8,8 +8,8 @@ import com.qualcomm.robotcore.hardware.Gamepad;
  */
 
 public class RobotTele extends LinearOpMode {
-    @Override
     Robot robot = new Robot();
+    @Override
     public void runOpMode() throws InterruptedException {
         //test for diagonals
         if(gamepad1.right_stick_x != 0 && gamepad1.right_stick_y != 0) {
