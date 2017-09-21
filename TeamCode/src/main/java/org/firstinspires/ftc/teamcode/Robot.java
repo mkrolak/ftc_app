@@ -9,7 +9,6 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  * Created by mkrol on 9/21/2017.
  */
 
-
 public class Robot {
     public static final int LEFT = 0;
     public static final int RIGHT = 1;
