@@ -18,6 +18,8 @@ public class Robot {
     public static final int FORWARDRIGHT = 5;
     public static final int BACKLEFT = 6;
     public static final int BACKRIGHT = 7;
+    public static final int TURNCLOCKWISE = 8;
+    public static final int TURNCOUNTERCLOCKWISE = 9;
     private DcMotor frontRightMotor;
     private DcMotor frontLeftMotor;
     private DcMotor backRightMotor;
@@ -80,6 +82,18 @@ public class Robot {
             case BACKRIGHT:
                 //frontLeftMotor.setDirection();
                 //backLeftMotor.setDirection();
+                break;
+            case TURNCLOCKWISE:
+                //frontLeftMotor.setDirection();
+                //frontRightMotor.setDirection();
+                //backLeftMotor.setDirection();
+                //backRightMotor.setDirection();
+                break;
+            case TURNCOUNTERCLOCKWISE:
+                //frontLeftMotor.setDirection();
+                //frontRightMotor.setDirection();
+                //backLeftMotor.setDirection();
+                //backRightMotor.setDirection();
                 break;
         }
 
