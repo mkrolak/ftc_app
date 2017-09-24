@@ -1,12 +1,13 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
 /**
  * Created by Axel on 9/21/2017.
  */
-
+@TeleOp
 public class RobotTele extends LinearOpMode {
     Robot robot = new Robot();
     @Override
