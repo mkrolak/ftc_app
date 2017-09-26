@@ -4,6 +4,7 @@ package org.firstinspires.ftc.teamcode;
 import android.widget.Switch;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 /**
  * Created by mkrol on 9/21/2017.
@@ -24,19 +25,23 @@ public class Robot {
     private DcMotor frontLeftMotor;
     private DcMotor backRightMotor;
     private DcMotor backLeftMotor;
+    private DcMotor leftIntakeMotor;
+    private DcMotor rightIntakeMotor;
 
     public Robot(){
         //frontLeftMotor = hardwareMap.get();
         //frontRoghtMotor = hardwareMap.get();
         //backRightMotor = hardwareMap.get();
         //backLeftMotor = hardwareMap.get();
+        //leftIntakeMotor = hardwareMap.get();
+        //rightIntakeMotor = hardwareMap.get();
 
 
 
     }
 
     public void moveForward(float power){
-        //frontLeftMotor.setPower();
+        //frontLeftMotor.setPower(power);
     }
 
     //Select the direction for omni chasic
@@ -97,6 +102,10 @@ public class Robot {
                 break;
         }
 
+    }
+    public void intake(DcMotorSimple.Direction direction){
+        //leftIntakeMotor.setDirection(direction);
+        //rightIntakeMotor.setDirection(direction);
     }
 
 }

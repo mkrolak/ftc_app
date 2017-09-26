@@ -1,3 +1,5 @@
+package org.firstinspires.ftc.teamcode;
+
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -15,12 +17,14 @@ public class Testcode extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
-        testmotor = hardwareMap.get("motor_test");
+        testmotor = (DcMotor) hardwareMap.get("motor_test");
         if (gamepad1.a) {
             testmotor.setDirection(DcMotorSimple.Direction.FORWARD);
+            testmotor.setPower(.1);
         }
         if (gamepad1.b) {
             testmotor.setDirection(DcMotorSimple.Direction.REVERSE);
+            testmotor.setPower(.1);
         }
         if(gamepad1.left_bumper){
             gamepad1.toString();
