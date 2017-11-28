@@ -1,7 +1,13 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.ColorSensor;
+import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.robot.Robot;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
 /**
@@ -9,41 +15,25 @@ import com.qualcomm.robotcore.hardware.Gamepad;
  */
 @TeleOp
 public class RobotTele extends LinearOpMode {
-    Robot robot = new Robot();
-    @Override
+    Robot11821_2 robot;
+   @Override
     public void runOpMode() throws InterruptedException {
-        //test to see if drivedr wants to go diagonals
-        if(gamepad1.right_stick_x != 0 && gamepad1.right_stick_y != 0) {
-            if(gamepad1.right_stick_x > 0){
-                if(gamepad1.right_stick_y > 0){
-                    robot.setDirection(robot.FORWARDRIGHT);
-                }else {
-                    robot.setDirection(robot.BACKRIGHT);
-                }
-            } else{
-                if(gamepad1.right_stick_y > 0){
-                    robot.setDirection(robot.FORWARDLEFT);
-                } else {
-                    robot.setDirection(robot.BACKLEFT);
-                }
+         robot = new Robot11821_2((DcMotor) hardwareMap.get("backLeft"), (DcMotor) hardwareMap.get("backRight"), (DcMotor) hardwareMap.get("frontLeft"), (DcMotor) hardwareMap.get("frontRight"), (DcMotor) hardwareMap.get("intakeRight"),(DcMotor) hardwareMap.get("intakeLeft"), (Servo)hardwareMap.get("servo"), (ColorSensor)hardwareMap.get("colorSensor"),(ColorSensor)hardwareMap.get("floorSensor"));        
+       waitForStart();
+        while(opModeIsActive()){
+            //Gamepad 1
+            //Set direction
+            robot.navagation(gamepad1.right_stick_x,gamepad1.right_stick_y);
+            //Gamepad 2
+            //set intake
+            if(gamepad1.a) {
+                robot.intake(Robot11821_2.IN);
+            }else if(gamepad1.b) {
+                robot.intake(Robot11821_2.OUT);
+            }else{
+                robot.intake(Robot11821_2.OFF);
             }
         }
-        //test to see if driver wants to go left or right
-        if(gamepad1.right_stick_x != 0) {
-            if (gamepad1.right_stick_x > 0) {
-                robot.setDirection(robot.RIGHT);
-            } else {
-                robot.setDirection(robot.LEFT);
-            }
-        }
-        //test to see if driver wants to go forward and back
-        if(gamepad1.right_stick_y != 0) {
-            if(gamepad1.right_stick_y > 0){
-                robot.setDirection(robot.FORWARD);
-            } else {
-                robot.setDirection(robot.BACK);
-            }
 
-        }
     }
 }
